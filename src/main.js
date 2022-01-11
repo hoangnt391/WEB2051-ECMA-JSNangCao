@@ -28,7 +28,7 @@ router.on({
     const { id } = data;
     render(detailPage.print(id));
   },
-  "/adminProductPage": () => {
+  "/admin/adminProductPage": () => {
     // console.log("About Page");
     render(adminProduct.print());
   },
