@@ -5,6 +5,8 @@ import productPage from "./page/productPage";
 import detailPage from "./page/detail";
 import adminProduct from "./page/admin/adminProduct";
 import adminProductEdit from "./page/admin/adminProductEdit";
+import signIn from "./page/signIn";
+import signUp from "./page/signUp";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const render = (content) => {
@@ -22,6 +24,14 @@ router.on({
   "/productPage": () => {
     // console.log("About Page");
     render(productPage.print());
+  },
+  "/signIn": () => {
+    // console.log("About Page");
+    render(signIn.print());
+  },
+  "/signUp": () => {
+    // console.log("About Page");
+    render(signUp.print());
   },
   "/productPage/:id": ({ data }) => {
     // console.log("About Page");
