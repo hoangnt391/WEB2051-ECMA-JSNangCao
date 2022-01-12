@@ -118,6 +118,7 @@ export const newsList = [
     desc: "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
     id: "17",
   },
+
 ];
 export const aboutPage = [
   {
