@@ -4,7 +4,7 @@ const adminProduct = {
   print() {
     return /* html */ `
     <div>
-      <h1>Quản lý product</h1>
+      <h1 class="py-10 font-bold text-4xl font-sans text-center">Quản lý product</h1>
       ${adminProductList.print()};
     </div>
     `;

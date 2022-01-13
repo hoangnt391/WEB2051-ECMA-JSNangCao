@@ -49,10 +49,10 @@ const adminProductList = {
                       ${post.desc}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <a href="admin/productPage/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                  <a href="admin/productPage/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900 hover:bg-gray-300 px-7 py-3 hover:font-bold hover:underline">Edit</a>
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <a href="#" class="text-indigo-600 hover:text-indigo-900">DEL</a>
+                  <a href="#" class="text-indigo-600 hover:text-indigo-900 hover:bg-gray-300 px-7 py-3 hover:font-bold hover:underline">DEL</a>
               </td>
           </tr>
           `).join(" ")}
