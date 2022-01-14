@@ -33,8 +33,8 @@ const adminProductEdit = {
             </header>
             <main>
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                <form class="px-4 py-6 sm:px-0 mx-3">
-                    <label for="" class="py-4 font-bold">Tilte</label>
+                <form class="block px-4 py-6 sm:px-0 mx-3">
+                    <label for="" class="py-4 font-bold">Tilte</label><br>
                     <input type="text" class="border my-2 sm:px-0" value="${result.title}" placeholder="Tiêu đề bài viết" id="post-title"/> <br/>
                     <label for="" class="py-4 font-bold">Image</label>
                     <img src="${result.img}" alt="" /><br>
