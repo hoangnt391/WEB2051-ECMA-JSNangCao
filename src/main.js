@@ -3,10 +3,13 @@ import HomePage from "./page/homepage";
 import AboutPage from "./page/aboutPage";
 import productPage from "./page/productPage";
 import detailPage from "./page/detail";
-import adminProduct from "./page/admin/adminProduct";
-import adminProductEdit from "./page/admin/adminProductEdit";
+
+import adminProductEdit from "./page/admin/news/edit";
 import signIn from "./page/signIn";
 import signUp from "./page/signUp";
+import dashboard from "./page/admin/dashboard";
+import adminNewsList from "./page/admin/news/adminNewsList";
+import addNews from "./page/admin/news/add";
 
 const router = new Navigo("/", { linksSelector: "a" });
 const render = (content) => {
@@ -38,13 +41,18 @@ router.on({
     const { id } = data;
     render(detailPage.print(id));
   },
-  "/admin/adminProductPage": () => {
-    // console.log("About Page");
-    render(adminProduct.print());
-  },
   "admin/productPage/:id/edit": ({ data }) => {
     const { id } = data;
     render(adminProductEdit.print(id));
   },
+  "/admin/dashboard": () => {
+    // console.log("About Page");
+    render(dashboard.print());
+  },
+  "/admin/news": () => {
+    render(adminNewsList.print());
+  },
+  "/admin/news/addNews": () => render(addNews.print()),
+
 });
 router.resolve();
