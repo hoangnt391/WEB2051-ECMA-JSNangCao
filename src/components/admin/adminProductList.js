@@ -1,7 +1,8 @@
-import { newsList } from "../../data";
+import { getAll } from "../../API/posts";
 
 const adminProductList = {
-  print() {
+  async print() {
+    const { data } = await getAll();
     return /* html */ `
 <div class="flex flex-col">
 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -28,16 +29,14 @@ const adminProductList = {
           </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
-            
-          ${newsList.map((post) => /* html */`
+          ${data.map((post) => /* html */`
           <tr>
               <td class="px-6 py-4 whitespace-nowrap">
                   <div class="text-sm text-gray-900">${post.id}</div>
-                  
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                     <div class="text-sm text-gray-500">
-                    <img src="${post.img}" class="py-4 mx-auto" alt="">
+                      <img src="${post.img}" class="py-4 mx-auto" alt="">
                     </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">

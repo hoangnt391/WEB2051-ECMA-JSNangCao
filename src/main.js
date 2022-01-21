@@ -11,8 +11,8 @@ import adminNewsList from "./page/admin/news/adminNewsList";
 import addNews from "./page/admin/news/add";
 
 const router = new Navigo("/", { linksSelector: "a" });
-const render = async (content) => {
-  document.querySelector("#app").innerHTML = await content.print();
+const render = async (content, id) => {
+  document.querySelector("#app").innerHTML = await content.print(id);
   if (content.afterPrint) await content.afterPrint();
 };
 router.on({
@@ -38,12 +38,10 @@ router.on({
   },
   "/productPage/:id": ({ data }) => {
     // console.log("About Page");
-    const { id } = data;
-    render(detailPage.print(id));
+    render(detailPage, data.id);
   },
   "admin/productPage/:id/edit": ({ data }) => {
-    const { id } = data;
-    render(adminProductEdit.print(id));
+    render(adminProductEdit, data.id);
   },
   "/admin/dashboard": () => {
     // console.log("About Page");
