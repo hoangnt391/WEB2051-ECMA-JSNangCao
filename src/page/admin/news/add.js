@@ -1,3 +1,4 @@
+import axios from "axios";
 import adminNav from "../../../components/admin/adminNav";
 
 const addNews = {
@@ -31,19 +32,39 @@ const addNews = {
             </header>
             <main>
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                <form class="px-4 py-6 sm:px-0 mx-3">
-                    <label for="" class="py-4 font-bold">Tilte</label><br>
-                    <input type="text" class="border my-2 sm:px-0"  placeholder="Tiêu đề bài viết" id="post-title"/> <br/>
+                <form class="px-4 py-6 sm:px-0 mx-3" id="form-add-post">
+                    <label for="" class="py-4 font-bold" >Title</label><br>
+                    <input type="text" id ="post-title" class="border my-2 sm:px-0"  placeholder="Tiêu đề bài viết" id="post-title"/> <br/>
                     <label for="" class="py-4 font-bold">Image</label>
                     <input type="file" class="border my-2 sm:px-0" name="" id="post-img"><br>
                     <label for="" class="py-4 font-bold">Description</label><br>
                     <textarea name="" class="border px-4 my-2 sm:px-0"  cols="100" rows="10" id="post-desc"></textarea><br/>
-                    <button class="btn">Thêm Mới</button>
+                    <button class="btn hover:bg-blue-500">Thêm Mới</button>
                 </form>
             </div>
         </div>
             </main>
     `;
+  },
+  afterPrint() {
+    // console.log("1");
+    const formAdd = document.querySelector("#form-add-post");
+    formAdd.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const post = {
+        title: document.querySelector("#post-title").value,
+        img: document.querySelector("#post-img").value,
+        desc: document.querySelector("#post-desc").value,
+      };
+      axios.post("http://192.168.1.10:3002/news", post);
+    //   fetch("http://192.168.1.10:3002/news", {
+    //     method: "POST",
+    //     header: {
+    //       "content-type": "application/json",
+    //     },
+    //     body: JSON.stringify(post),
+    //   });
+    });
   },
 };
 export default addNews;
